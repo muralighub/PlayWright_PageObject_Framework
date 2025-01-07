@@ -1,0 +1,8 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","7105","verify products added to cart on cart page","chrome","Mon Jan 06 20:00:54 IST 2025","passed","Mon Jan 06 20:01:01 IST 2025","","Assignment.spec.js","",""
+"","4578","should auto detect accessibility issues","chrome","Mon Jan 06 20:01:20 IST 2025","failed","Mon Jan 06 20:01:24 IST 2025","","Assignment.spec.js","",""
+"","8007","verify checkout by adding 3 or more products to cart","chrome","Mon Jan 06 20:00:45 IST 2025","passed","Mon Jan 06 20:00:53 IST 2025","","Assignment.spec.js","",""
+"","8873","verify total price on overview page","chrome","Mon Jan 06 20:01:01 IST 2025","passed","Mon Jan 06 20:01:10 IST 2025","","Assignment.spec.js","",""
+"","6305","verify products prices are displayed from high to low","chrome","Mon Jan 06 20:00:38 IST 2025","passed","Mon Jan 06 20:00:44 IST 2025","","Assignment.spec.js","",""
+"","8592","Saucedemo Visual Testing","chrome","Mon Jan 06 20:01:11 IST 2025","passed","Mon Jan 06 20:01:19 IST 2025","","Assignment.spec.js","",""
+"","7781","verify products are displayed in decending order Z to A","chrome","Mon Jan 06 20:00:29 IST 2025","passed","Mon Jan 06 20:00:37 IST 2025","","Assignment.spec.js","",""
