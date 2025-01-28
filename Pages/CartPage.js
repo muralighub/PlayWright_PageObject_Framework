@@ -1,10 +1,12 @@
 const { test, expect } = require('@playwright/test');
-const AxeBuilder = require('@axe-core/playwright');
+const { BasePage } = require('./BasePage');
 
-class CartPage {
+class CartPage extends BasePage {
+
 
     constructor(page) {
 
+        super(page);
         this.page = page;
         this.cartItemNames = page.locator('[data-test="inventory-item-name"]');
         this.checkoutButton = page.getByRole('button', { name: 'Checkout' });
@@ -38,7 +40,7 @@ class CartPage {
 
     }
 
-    
+
 }
 
 module.exports = { CartPage };

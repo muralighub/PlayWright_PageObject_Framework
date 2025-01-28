@@ -165,19 +165,44 @@ test('Saucedemo Visual Testing', async ({ page }) => {
 
 });
 
-test.only('should auto detect accessibility issues', async ({ page }, testInfo) => {
+
+test('Accessibility Testing', async ({ page }, testInfo) => {
 
     const pageManager = new PageManager(page);
     const loginPage = pageManager.getLoginPage();
     await loginPage.goToHomePage();
-    const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
+    // accessibility checks for login page
+    await loginPage.analyzeAccessibility(testInfo);
+    await loginPage.loginAsStandardUser(username, password);
+    const productsPage = pageManager.getProductPage();
+    // accessibility checks for products page
+    await productsPage.analyzeAccessibility(testInfo);
+    await productsPage.addProductsToCart(products);
+    await productsPage.clickonCartButton();
+    const cartPage = pageManager.getCartPage();
+    // accessibility checks for cart page
+    await cartPage.analyzeAccessibility(testInfo);
+    await cartPage.verifyCartItemsToAddedProducts(products);
+    await cartPage.clickOnCheckoutButton();
+    const checkoutPage = pageManager.getCheckoutPage();
+    // accessibility checks for checkout page
+    await checkoutPage.analyzeAccessibility(testInfo);
+    await checkoutPage.fillCheckoutDetails(firstname, lastname, zip);
+    await checkoutPage.clickOnContinue();
+    const overviewPage = pageManager.getOverviewPage();
+    // accessibility checks for overview page
+    await overviewPage.analyzeAccessibility(testInfo);
+    await overviewPage.verifyPaymentAndDeliveryDetails();
+    await overviewPage.clickOnFinishButton();
+    const confirmationPage = pageManager.getConfirmationPage();
+    // accessibility checks for confirmation page
+    await confirmationPage.analyzeAccessibility(testInfo);
+    await confirmationPage.verifyOrderConfirmation();
 
-    await testInfo.attach('accessibility-scan-results', {
-        body: JSON.stringify(accessibilityScanResults, null, 2),
-        contentType: 'application/json'
-    });
 
 });
+
+
 
 
 

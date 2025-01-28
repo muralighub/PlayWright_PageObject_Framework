@@ -1,11 +1,12 @@
 const { test, expect } = require('@playwright/test');
-const AxeBuilder = require('@axe-core/playwright');
+const { BasePage } = require('./BasePage'); 
 
-class ConfirmationPage {
+class ConfirmationPage extends BasePage {
 
 
     constructor(page) {
 
+        super(page);
         this.page = page;
         this.confirmText = 'Thank you for your order!';
         this.confirmMsg = page.getByText('Thank you for your order!');

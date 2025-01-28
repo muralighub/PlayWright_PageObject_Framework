@@ -1,10 +1,11 @@
 const { test, expect } = require('@playwright/test');
-const AxeBuilder = require('@axe-core/playwright');
+const { BasePage } = require('./BasePage');
 
-class OverviewPage {
+class OverviewPage extends BasePage {
 
     constructor(page) {
 
+        super(page);
         this.page = page;
         this.payment = page.locator('[data-test="payment-info-value"]');
         this.delivery = page.locator('[data-test="shipping-info-value"]');

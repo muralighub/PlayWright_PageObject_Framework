@@ -1,10 +1,12 @@
 const { test, expect } = require('@playwright/test');
-const AxeBuilder = require('@axe-core/playwright').default;
+const { BasePage } = require('./BasePage'); 
 
-class LoginPage {
+class LoginPage extends BasePage {
 
 
     constructor(page) {
+
+        super(page);
         this.page = page;
         this.username = page.getByPlaceholder('Username');
         this.password = page.getByPlaceholder('Password');
@@ -31,6 +33,8 @@ class LoginPage {
         expect.soft(await this.page.screenshot({ mask: [this.page.locator('[data-test="footer-copy"]')] })).toMatchSnapshot(["ScreenShots", 'loginpage.png']);
 
     }
+
+    
 
 
 }

@@ -1,12 +1,13 @@
 const { test, expect } = require('@playwright/test');
-const AxeBuilder = require('@axe-core/playwright');
+const { BasePage } = require('./BasePage');
 
-class ProductsPage {
+class ProductsPage extends BasePage {
 
 
     constructor(page) {
 
-        this.page = page;
+        super(page);
+        this.page = page;        
         this.burgerMenu = page.locator('button[id="react-burger-menu-btn"]');
         this.waitForBurgerList = page.locator('.bm-item-list a');
         this.allItemsLink = page.locator('[data-test="inventory-sidebar-link"]');
@@ -110,6 +111,11 @@ class ProductsPage {
         await this.burgerMenu.click();
         await this.waitForBurgerList.last().waitFor();
         await this.logoutLink.click();
+    }
+
+    async scanProductPage() {
+
+        return new AxeBuilder(this.page);
     }
 
 
