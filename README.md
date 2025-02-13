@@ -28,27 +28,27 @@ This Playwright Project covers the following E2E test scenarios:
    ```
    Headless Mode
    ```bash
-   npx playwright test tests/AssignmentCheckout.spec.js 
+   npx playwright test tests/ProductE2ETests.spec.js 
    ```
    Headed Mode
    ```bash
-   npx playwright test tests/AssignmentCheckout.spec.js --headed
+   npx playwright test tests/ProductE2ETests.spec.js --headed
    ```
    To run the test on a specific browser using project settings
    ```bash
-   npx playwright test tests/AssignmentCheckout.spec.js --headed --project=chrome
+   npx playwright test tests/ProductE2ETests.spec.js --headed --project=chrome
    ```
    To update snapshots for visual tests
    ```bash
-   npx playwright test tests/AssignmentCheckout.spec.js --headed --project=chrome --update-snapshots
+   npx playwright test tests/ProductE2ETests.spec.js --headed --project=chrome --update-snapshots
    ```
 
 ## To run E2E tests and generate allure reports
 
    ```bash 
-   npx playwright test tests/Assignment.spec.js --reporter=line,allure-playwright --headed --project=chrome
+   npx playwright test tests/ProductE2ETests.spec.js --reporter=line,allure-playwright --headed --project=chrome
    ```
-
+   
 ## To generate allure html report after the tests have been run
 
    ```bash
